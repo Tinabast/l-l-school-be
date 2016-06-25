@@ -1,0 +1,19 @@
+<p>
+  <strong>Name:</strong>
+  <%= @resume.name %>
+</p>
+ 
+<p>
+  <strong>Position:</strong>
+  <%= @resume.position %>
+</p>
+<p>
+  <strong>Communication:</strong>
+  <%= @resume.communication %>
+</p>
+<p>
+  <strong>About me:</strong>
+  <%= @resume.about_me %>
+</p>
+<%= link_to 'Edit', edit_resume_path(@resume) %>
+<%= link_to 'Back', resumes_path %>
