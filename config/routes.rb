@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   mount Api::Base, at: '/'
 
   # You can have the root of your site routed with "root"
-  resources :resumes
+  resources :resumes, :users, :lessons, :comments
   root 'welcome#index'
 
   # Example of regular route:

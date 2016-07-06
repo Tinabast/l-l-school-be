@@ -1,0 +1,20 @@
+<h1>Listing all Lessons</h1>
+<table>
+  <tr>
+    <th>Title</th>
+         <th colspan="2"></th>
+  </tr>
+ 
+  <% @lessons.each do |lesson| %>
+    <tr>
+      <td><%= lesson.title %></td>
+      <td><%= link_to 'Show', lesson_path(lesson) %></td>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+      <td><%= link_to 'Destroy', lesson_path(lesson),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+ <%= link_to 'New lesson', new_lesson_path %>
+ <h3><a href="/api/resumes">API data</a></h3>

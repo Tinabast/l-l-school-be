@@ -1,0 +1,52 @@
+<%= form_for @comment do |f| %>
+
+	<% if @comment.errors.any? %>
+
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") %> prohibited
+        this comment from being saved:
+      </h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+   <p>
+    <%= f.label :user_id %><br>
+
+
+     <%= f.collection_select(:user_id, User.all, :id, :nickname) %>
+     </p>
+
+  <p>
+    <%= f.label :lesson_id %><br>
+
+
+     <%= f.collection_select(:lesson_id, Lesson.all, :id, :title) %>
+  
+
+  </p>
+
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :rate%><br>
+    <%= f.text_field :rate%>
+  </p>
+
+  
+ 
+ 
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
